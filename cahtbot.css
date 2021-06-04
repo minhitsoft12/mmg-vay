@@ -1,0 +1,70 @@
+#chatbot-content-container {
+
+    position: fixed;
+
+    right: 15px;
+
+    bottom: 0;
+
+    width: 250px;
+
+    height: 33px;
+
+    z-index: 66666;
+
+}
+
+#chatbot-content {
+
+    padding: 5px 15px;
+
+    background-color: #08a150;
+
+    border-radius: 4px 4px 0 0 !important;
+
+    box-shadow: none;
+
+    background-clip: padding-box !important;
+
+    border: 0 !important;
+
+}
+
+#chatbot-content #full-view-button {
+
+    display: block;
+
+    position: relative;
+
+    padding: 0;
+
+    outline: 0;
+
+    color: #fff;
+
+    white-space: nowrap;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    text-decoration: none;
+
+}
+
+#chatbot-content #open-icon {
+
+    width: 23px;
+
+    height: 23px;
+
+    float: right;
+
+    top: 1px;
+
+    right: -10px;
+
+    position: relative;
+
+    background: url(/sites/all/themes/syntek/images/chatbot-icon.png);
+}
