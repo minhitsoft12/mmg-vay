@@ -1593,7 +1593,7 @@
             a.console && a.console.warn && t && Mt.test(t.name) && a.console.warn("jQuery.Deferred exception: " + t.message, t.stack, e)
         }, bt.readyException = function(t) {
             a.setTimeout((function() {
-                throw t
+                // throw t
             }))
         };
         var It = bt.Deferred();
@@ -20758,107 +20758,9 @@
             s = i(n(119)),
             c = i(n(118)),
             l = i(n(52)),
-            u = t(".card-list .card-list__list-item .card-item"),
-            d = t(".card-list__list-item-display"),
-            f = t(".card-list .card-list__button-compare-card .count-card-chosen"),
-            p = t(".add-card-component .add-card-content .credit-card-item"),
-            h = t(".add-card-component .add-card-content"),
-            v = t(".card-list .choice-button"),
-            m = t(".card-list .card-list__filter__list--mobile .sub-item"),
             g = [],
             y = void 0,
             b = {
-                init: function() {
-                    b._activeFirstButtonChosenCard(), b._activeFirstButtonChosenCardMobile(), s.default.subscribe(a.default.ADD_CARD, (function(t, e) {
-                        b._actionWhenChangeCard(e), b._findCardByDataIndex(t.dataIndex, a.default.ADD_CARD)
-                    })), s.default.subscribe(a.default.REMOVE_CARD, (function(t, e, n) {
-                        b._actionWhenChangeCard(e, n), b._findCardByDataIndex(t.dataIndex, a.default.REMOVE_CARD)
-                    })), l.default.init(), g = u.clone(), r.default.init(g.length, (function(e) {
-                        var n = t(e.currentTarget).attr("data-index");
-                        "PREV" === n ? r.default.changePaging("DECREASE") : "NEXT" === n ? r.default.changePaging("INCREASE") : r.default.changePaging("SET", n - 1), b._filter(o.default.getCurrentFilterParam(), y), b._checkboxAddItem(), t("html, body").animate({
-                            scrollTop: t(".card-list").offset().top
-                        }, 1e3), l.default.init()
-                    })), o.default.init((function(e, n) {
-                        var i;
-                        i = t(e.currentTarget).attr("data-type"), r.default.changePaging("RESET"), o.default.setCurrentFilterParam(i), b._filter(i, n), b._checkboxAddItem(), l.default.init()
-                    })), b._filter(o.default.getCurrentFilterParam(), a.default.FIND_PARENT), b._checkboxAddItem(), b._setContentButtonCompare(0)
-                },
-                _setContentButtonCompare: function(e, n) {
-                    0 == e ? ("list-remove" == n && c.default.hideMe(), f.css("display", "none")) : f.css("display", "unset"), e < a.default.MAXIMUM_ITEM_SELECT - 1 ? t(f).parents(".card-list__button-compare-card").addClass("deactivated") : t(f).parents(".card-list__button-compare-card").removeClass("deactivated")
-                },
-                _checkboxAddItemState: function(e) {
-                    e.length === a.default.MAXIMUM_ITEM_SELECT ? g.each((function(n, i) {
-                        e.includes(t(i).attr("data-index")) || t(i).find('.add-compare input[type="checkbox"]').addClass("deactivated-by-count")
-                    })) : g.each((function(e, n) {
-                        t(n).find('.add-compare input[type="checkbox"]').removeClass("deactivated-by-count")
-                    }))
-                },
-                _filter: function(e, n) {
-                    var i = null;
-                    if ("ALL" === e) t(".card-list .child-filter-item").removeClass("active"), i = g;
-                    else switch (n) {
-                        case a.default.FIND_PARENT:
-                            t(".card-list .child-filter-item").removeClass("active"), y = a.default.FIND_PARENT, i = "POINT CARD" === e ? g.filter((function(e, n) {
-                                return 4 <= +t(n).attr("data-star")
-                            })) : g.filter((function(n, i) {
-                                return t(i).attr("data-parent-type") === e
-                            }));
-                            break;
-                        case a.default.FIND_CHILD:
-                            y = a.default.FIND_CHILD, t(".card-list .child-filter-item").removeClass("active"), t('.card-list .child-filter-item[data-type="' + e + '"]').addClass("active"), t(".card-list .choice-button").removeClass("active"), t('.card-list .child-filter-item[data-type="' + e + '"]').parents("li").find("button").addClass("active"), t('.card-list .child-filter-item[data-type="' + e + '"]').parents(".sub-item").find(".parent-filter-mobile"), setTimeout((function() {
-                                t('.card-list .child-filter-item[data-type="' + e + '"]').parents(".sub-item").find(".parent-filter-mobile").addClass("active")
-                            }), 1e3), i = g.filter((function(n, i) {
-                                return t(i).attr("data-type") === e
-                            }))
-                    }
-                    b._paging(i)
-                },
-                _paging: function(t) {
-                    var e, n = r.default.getPagingIndex();
-                    e = t.slice(n * a.default.CARD_ITEM_PER_PAGE, n * a.default.CARD_ITEM_PER_PAGE + a.default.CARD_ITEM_PER_PAGE), r.default.renderPagination(t.length), b._render(e)
-                },
-                _render: function(t) {
-                    d.empty().append(t)
-                },
-                _checkboxAddItem: function() {
-                    t('.card-list .card-list__list-item-display .card-item .card-item__action .add-compare input[type="checkbox"]').change((function(e) {
-                        var n = e.currentTarget,
-                            i = t(n).parents(".card-item").attr("data-index"),
-                            r = b._getCardInfomation(i);
-                        t(n).is(":checked") ? s.default.actionAddCard("addCard", r) : s.default.actionRemoveCard("removeCard", r, "list-remove")
-                    }))
-                },
-                _actionWhenChangeCard: function(t, e) {
-                    b._setContentButtonCompare(t.length, e), b._checkboxAddItemState(t)
-                },
-                _findCardByDataIndex: function(e, n) {
-                    var i;
-                    g.each((function(r, o) {
-                        if (t(o).attr("data-index") == e) switch (i = t(o), n) {
-                            case a.default.ADD_CARD:
-                                i.find('.add-compare input[type = "checkbox"]').prop("checked", !0);
-                                break;
-                            case a.default.REMOVE_CARD:
-                                i.find('.add-compare input[type = "checkbox"]').prop("checked", !1)
-                        }
-                    }))
-                },
-                _getCardInfomation: function(e) {
-                    var n;
-                    p.each((function(i, r) {
-                        t(r).attr("data-index") == e && (n = r)
-                    }));
-                    var i = t(n).find(".card-image img").attr("src"),
-                        r = t(n).find(".card-name").text();
-                    return {
-                        dataIndex: t(n).attr("data-index"),
-                        cardName: r,
-                        cardImage: i,
-                        buttonApply: h.attr("data-text-button-apply"),
-                        buttonLearn: h.attr("data-text-button-learn"),
-                        buttonRemove: h.attr("data-button-remove")
-                    }
-                },
                 _isMobile: function() {
                     return t("body").width() <= 991
                 },
@@ -25557,8 +25459,6 @@
             s = i(n(32)),
             c = t(".primary-search-bar__menu__content__list__item a"),
             l = t(".i-want-to-list-content .card-list__filter .card-list__filter__list .choice-button, .i-want-to-list-content .card-list__filter .card-list__filter__list--mobile .filter-option"),
-            u = t(".i-want-to-list-content .card-list__list-item-display"),
-            d = t(".i-want-to-list-content .card-list__list-item-display-null"),
             f = void 0,
             p = 6,
             h = {
@@ -25576,24 +25476,7 @@
                         r.text(a), e.find(".primary-search-bar__content").addClass("selected"), o.localStorageService.removeLocalStorageByKey(o.IWANT_OPTION), this.getIwantData(1)
                     }
                 },
-                getIwantData: function(e, n) {
-                    t.ajax({
-                        method: "GET",
-                        url: a.endPoints + "iwant/get?page=" + e + "&maxitems=6&contentType=" + f + "&customerType=" + p
-                    }).done((function(e) {
-                        var i, o;
-                        // u.empty(), 200 == e.status_code ? e.iwant_contents && e.iwant_contents.length ? (d.addClass("hide"), o = i = e, i.iwant_contents && i.iwant_contents.length && i.iwant_contents.forEach((function(t) {
-                        //     var e = '\n      <div class="col-sm-6 col-lg-4 card-item">\n        <div class="card-item__wrap">\n          <div class="card-item__image-container">\n            <a href="' + t.Url + '">\n              ' + (null == t.Image ? "" : '<img class="card-item__image-container--card-image" src="' + t.Image + '" alt="">') + "\n            </a>\n            " + (null == t.CardTag ? "" : '<div class="card-item__image-container--tag">' + t.CardTag + "</div>") + '\n          </div>\n          <div class="card-item__description">\n            <span class="card-type">' + t.CardType + '</span>\n            <h3 class="name"><a href="' + t.Url + '">' + t.Title + '</a></h3>\n            <ul class="description">\n              ' + t.Description + '\n            </ul>\n          </div>\n          <div class="card-item__action">\n            <div class="choice-button-action">\n            ' + (null == t.ApplyNowText ? "" : '<a class="button-apply btn btn-outline-primary" href="' + t.ApplyNowUrl + '">' + t.ApplyNowText + "</a>") + '\n            <a class="button-infomation btn btn-outline-default" href="' + t.Url + '">' + o.read_more + "</a>\n            </div>\n          </div>\n        </div>\n      </div>\n      ";
-                        //     u.append(e)
-                        })), n || (s.default.destroyPaginator(".i-want-to-list-content"), 6 < e.totalCount && s.default.initPaginator({
-                            totalPage: Math.ceil(e.totalCount / 6),
-                            triggerFunc: r,
-                            paginationClass: "paginatorCustomClass",
-                            parentClass: ".i-want-to-list-content",
-                            contentDiv: ".card-list__list-item-display"
-                        }))) : (s.default.destroyPaginator(".i-want-to-list-content"), d.removeClass("hide")) : t(".i-want-to-list-content .card-list__list-item-display").html("")
-                    }))
-                },
+                
                 chosenCustomerType: function() {
                     var e = this;
                     l.on("click", (function(n) {
