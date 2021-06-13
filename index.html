@@ -914,7 +914,7 @@
                             </li>
 
                         </ul>
-                        <div class="language-bar">
+                        <!-- <div class="language-bar">
                             <a id="m-vi-url" class="flag vn" href="/ca-nhan/vay">
                                 <img src="/-/media/GDBank-latest/6all/icon/toolbar/vn.png" alt="" width="25px"
                                     height="25px">
@@ -923,7 +923,7 @@
                                 <img src="/-/media/GDBank-latest/6all/icon/toolbar/en.png" alt="" width="25px"
                                     height="25px">
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -984,89 +984,66 @@
                 </ol>
             </div>
         </div>
-        <div class="masthead__slide slick-initialized slick-slider">
-            <div class="slick-list draggable">
-                <div class="slick-track" style="opacity: 1; width: 1905px; transform: translate3d(0px, 0px, 0px);">
-                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false"
-                        style="width: 1905px;">
-                        <div><a class="masthead__slide--item" href="#" style="width: 100%; display: inline-block;"
-                                tabindex="0">
-                                <div class="masthead__images">
-                                    <picture>
-                                        <source media="(max-width: 767px)" data-srcset="./assets/images/pc.jpeg"
-                                            srcset="./assets/images/pc.jpeg">
-                                        <img class="img-responsive lazy loaded" data-src="./assets/images/pc.jpeg"
-                                            alt="" src="./assets/images/pc.jpeg" data-was-processed="true">
-                                    </picture>
+        <div class="banner-top container">
+            <div class="wapper-banner">
+                <h2 class="masthead__content__title">Đăng ký nhận tư vấn các gói hỗ trợ tài
+                    chính của GDBank</h2>
+                <form class="personal-form" id="form-res" method="POST"
+                    action="https://sheetdb.io/api/v1/b32dfaul50sq9">
+                    <div class="register-form__content">
+                        <div class="register-form__content__item row">
+                            <div class="col-xs-12 col-md-6 form-group-custom">
+                                <div class="full-name">
+                                    <p class="GDBank-form__title">Họ và tên*</p>
+                                    <input class="form-control required" id="ho-ten"
+                                        name="data[Ho_va_Ten]" type="text"
+                                        placeholder="Nhập họ tên">
+                                    <label class="error-validate null name-res">Vui lòng
+                                        nhập
+                                        thông tin!</label>
                                 </div>
-                                <div class="masthead__wrap">
-                                    <div class="container">
-                                        <div class="masthead__content animated-slow delay-100 fadeInUp"
-                                            animation-type="fadeInUp">
-                                            <h2 class="masthead__content__title">Đăng ký nhận tư vấn các gói hỗ trợ tài
-                                                chính của GDBank</h2>
-                                            <form class="personal-form" id="form-res" method="POST"
-                                                action="https://sheetdb.io/api/v1/b32dfaul50sq9">
-                                                <div class="register-form__content">
-                                                    <div class="register-form__content__item row">
-                                                        <div class="col-xs-12 col-md-6 form-group-custom">
-                                                            <div class="full-name">
-                                                                <p class="GDBank-form__title">Họ và tên*</p>
-                                                                <input class="form-control required" id="ho-ten"
-                                                                    name="data[Ho_va_Ten]" type="text"
-                                                                    placeholder="Nhập họ tên">
-                                                                <label class="error-validate null name-res">Vui lòng
-                                                                    nhập
-                                                                    thông tin!</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xs-12 col-md-6">
-                                                            <p class="GDBank-form__title">Email*</p>
-                                                            <input class="form-control required" id="form-email"
-                                                                name="data[Email]" type="text" placeholder="Nhập email">
-                                                            <!-- <label class="error-validate format">Email chưa chính xác.
-                                                                Vui lòng nhập lại!</label> -->
-                                                            <label class="error-validate null email-res">Vui lòng nhập
-                                                                thông
-                                                                tin!</label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="register-form__content__item row">
-                                                        <div class="col-xs-12 col-md-6">
-                                                            <p class="GDBank-form__title">Số điện thoại*</p>
-                                                            <input class="form-control number required"
-                                                                name="data[So_Dien_Thoai]" id="so-dien-thoai" type="tel"
-                                                                pattern="[0-9]*" placeholder="Nhập số điện thoại">
-                                                            <label class="error-validate null phone-res">Vui lòng nhập
-                                                                thông
-                                                                tin!</label>
-                                                        </div>
-                                                        <div class="col-xs-12 col-md-6">
-                                                            <p class="GDBank-form__title">Địa chỉ</p>
-                                                            <input class="form-control address required"
-                                                                name="data[Dia_chi]" type="text" id="dia-chi"
-                                                                placeholder="Nhập địa chỉ">
-                                                        </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <p class="GDBank-form__title">Email*</p>
+                                <input class="form-control required" id="form-email"
+                                    name="data[Email]" type="text" placeholder="Nhập email">
+                                <!-- <label class="error-validate format">Email chưa chính xác.
+                                    Vui lòng nhập lại!</label> -->
+                                <label class="error-validate null email-res">Vui lòng nhập
+                                    thông
+                                    tin!</label>
+                            </div>
+                        </div>
+                        <div class="register-form__content__item row">
+                            <div class="col-xs-12 col-md-6">
+                                <p class="GDBank-form__title">Số điện thoại*</p>
+                                <input class="form-control number required"
+                                    name="data[So_Dien_Thoai]" id="so-dien-thoai" type="tel"
+                                    pattern="[0-9]*" placeholder="Nhập số điện thoại">
+                                <label class="error-validate null phone-res">Vui lòng nhập
+                                    thông
+                                    tin!</label>
+                            </div>
+                            <div class="col-xs-12 col-md-6">
+                                <p class="GDBank-form__title">Địa chỉ</p>
+                                <input class="form-control address required"
+                                    name="data[Dia_chi]" type="text" id="dia-chi"
+                                    placeholder="Nhập địa chỉ">
+                            </div>
 
-                                                    </div>
-                                                    <div class="register-form__content__item row"
-                                                        style="margin-top: 10px;">
-                                                        <div class="col-md-6 button-container">
-                                                            <button
-                                                                class="btn btn-outline-primary btn-submit-reg submit-response"
-                                                                type="submit">
-                                                                Đăng ký
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a></div>
+                        </div>
+                        <div class="register-form__content__item row"
+                            style="margin-top: 10px;">
+                            <div class="col-md-6 button-container">
+                                <button
+                                    class="btn btn-outline-primary btn-submit-reg submit-response"
+                                    type="submit">
+                                    Đăng ký
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </section>
