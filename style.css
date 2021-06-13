@@ -404,6 +404,13 @@
          max-width: 1230px
      }
  }
+
+ @media (max-width:770px) {
+    .promotion-wrap__right {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+}
  
  .container-fluid {
      width: 100%;
