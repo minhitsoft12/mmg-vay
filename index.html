@@ -4579,7 +4579,25 @@
             </form>
         </div>
     </div>
-    <div class="fb-customerchat" page_id="100404918817300">
+    <!-- <div class="fb-customerchat" page_id="100404918817300"> -->
+        <script>
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId            : '622625451546886',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v2.11'
+              });
+            };
+            (function(d, s, id){
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) {return;}
+               js = d.createElement(s); js.id = id;
+               js.src = "https://connect.facebook.net/en_US/sdk.js";
+               fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+          </script>
+          <div class="fb-customerchat" page_id="100404918817300"></div>
     </div>
     <div class="modal-backdrop fade"></div>
     <script language="javascript">
@@ -4718,7 +4736,7 @@
             });
         });
     </script>
-    <script language="javascript">
+    <!-- <script language="javascript">
         (function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -4726,7 +4744,7 @@
             js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-    </script>
+    </script> -->
     <script type="text/javascript" src="./assets/framework/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./script.js"></script>
 </body>
