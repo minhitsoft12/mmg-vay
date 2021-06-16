@@ -14874,7 +14874,7 @@
  }
  
  .promotion--tab.promotion--menu-collapse .collapse-header {
-     background: url(/assets/images/bg-promotion-filter.jpg) repeat-x 0 100%;
+     background: url(./assets/images/icons/bg-promotion-filter.jpeg) repeat-x 0 100%;
      background-size: inherit;
      color: #292e2f;
      padding: 10px 15px 14px;
@@ -28122,15 +28122,52 @@
 body.dis-scroll {
     overflow: hidden;
 }
+.banner-top {
+    background: url(./assets/images/2.jpg);
+    padding: 60px 0;
+}
+.wapper-banner {
+    color: #fff;
+}
+.wapper-banner h2{
+    font-size: 30px;
+}
+#form-res {
+    width: 60%;
+}
+.slick-track {
+    width: 1242px;
+}
+input.form-control {
+    outline: none;
+    box-shadow: none;
+}
 
+@media (max-width:1025px) {
+    .banner-top {
+        background-position-x: right;
+    }
+    .slick-track {
+        width: 100%;
+    }
+}
 @media (max-width:770px) {
     .promotion-wrap__right {
         max-height: 300px;
         overflow-y: scroll;
     }
+    #form-res {
+        width: 100%;
+    }
 }
 @media (max-width:550px) {
     .contact-form-popup {
         width: 85%;
+    }
+    .slick-track {
+        flex-wrap: wrap;
+    }
+    .back-to-top.show {
+        display: none !important;
     }
 }
